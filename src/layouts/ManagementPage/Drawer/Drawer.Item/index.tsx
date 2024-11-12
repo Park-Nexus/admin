@@ -1,4 +1,4 @@
-import * as S from "./DrawerItem.styled";
+import * as S from "./index.styled";
 
 interface IDrawerItemProps {
   to: string;

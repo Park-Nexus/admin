@@ -1,6 +1,6 @@
 import Input from "./Input/Input";
 import Select from "./Select/Select";
-import Checkbox from "./Checkbox/Checkbox";
+import Checkbox from "./Checkbox";
 import DatePicker from "./DatePicker/DatePicker";
 import TextArea from "./TextArea/TextArea";
 

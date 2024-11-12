@@ -1,4 +1,4 @@
-import Button from "@components/Button/Button";
+import Button from "@components/Button";
 import Typo from "@components/Typo/Typo";
 import { Link } from "react-router-dom";
 import styled from "styled-components";

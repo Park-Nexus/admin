@@ -1,4 +1,4 @@
-export default function General() {
+export default function Overview() {
   return (
     <div
       style={{

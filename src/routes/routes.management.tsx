@@ -1,15 +1,14 @@
 import { IRoute } from "@interfaces/common";
-
-import General from "@pages/General/General";
+import Overview from "@pages/Overview";
 import Settings from "@pages/Settings/Settings";
 
 export const managementRoutes: IRoute[] = [
   {
     path: "/",
-    component: <General />,
+    component: <Overview />,
   },
   {
-    path: "employee/*",
+    path: "parking-lot-approval/*",
     component: <></>,
   },
   {

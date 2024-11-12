@@ -1,4 +1,4 @@
-import * as S from "./Avatar.styled";
+import * as S from "./index.styled";
 
 interface IAvatarProps extends JSX.IntrinsicAttributes {
   username?: string;

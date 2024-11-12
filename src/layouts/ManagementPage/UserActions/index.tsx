@@ -1,6 +1,6 @@
-import * as S from "./UserActions.styled";
+import * as S from "./index.styled";
 
-import Avatar from "@components/Avatar/Avatar";
+import Avatar from "@components/Avatar";
 
 import { Popover } from "antd";
 

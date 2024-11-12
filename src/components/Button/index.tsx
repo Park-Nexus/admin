@@ -1,4 +1,4 @@
-import * as S from "./Button.styled";
+import * as S from "./index.styled";
 
 interface IButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,

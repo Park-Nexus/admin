@@ -1,7 +1,7 @@
 import * as S from "./index.styled";
 import NavBar from "./NavBar";
 import Drawer from "./Drawer";
-import Footer from "@components/Footer/Footer";
+import Footer from "@components/Footer";
 import { Outlet } from "react-router-dom";
 
 export default function ManagementPage() {

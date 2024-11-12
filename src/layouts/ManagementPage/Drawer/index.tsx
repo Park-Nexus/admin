@@ -1,20 +1,26 @@
 import * as S from "./index.styled";
-import DrawerItem from "./Drawer.Item/DrawerItem";
+import DrawerItem from "./Drawer.Item";
 
-import EmployeeManagement from "@assets/icons/employee_management.png";
+import ParkingLotApprovalIcon from "@assets/icons/parking-lot-approval.png";
+import OverviewIcon from "@assets/icons/overview.png";
 
 const DRAWER_ITEMS = [
   {
-    to: "/employee",
-    label: "Employee Management",
-    icon: EmployeeManagement,
+    to: "/",
+    label: "Overview",
+    icon: OverviewIcon,
+  },
+  {
+    to: "/parking-lot-approval",
+    label: "Parking Lot Approval",
+    icon: ParkingLotApprovalIcon,
   },
 ];
 
 export default function Drawer() {
   return (
     <S.Drawer>
-      <S.Title variant="h4">General</S.Title>
+      <S.Title variant="h4">ParkNexus</S.Title>
       {DRAWER_ITEMS.map((item, index) => (
         <DrawerItem key={index} {...item} />
       ))}

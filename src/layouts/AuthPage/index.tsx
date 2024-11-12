@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import * as S from "./index.styled";
 import LogoImage from "@assets/images/mobile-logo.png";
-import Footer from "@components/Footer/Footer";
+import Footer from "@components/Footer";
 
 export default function AuthPage() {
   return (
