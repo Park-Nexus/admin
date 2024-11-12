@@ -39,7 +39,8 @@
       "@store/*": ["./src/store/*"],
       "@utils/*": ["./src/utils/*"],
       "@validations/*": ["./src/validations/*"],
-      "@variables/*": ["./src/variables/*"]
+      "@variables/*": ["./src/variables/*"],
+      "@trpc/*": ["./src/trpc/*"]
     }
   },
   "include": ["src"]
