@@ -37,7 +37,8 @@ export const authLinkInterceptor: TRPCLink<TrpcRouter> = () => {
             let newAccessToken;
             try {
               newAccessToken = await getAccessToken();
-            } catch (_) {
+            } catch (e) {
+              console.error(e);
               observer.error(err);
             }
             if (!newAccessToken) return observer.error(err);

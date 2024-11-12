@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-const notifyError = (message: string | string[]) => {
+export const notifyError = (message: string | string[]) => {
   if (Array.isArray(message)) {
     toast.error(message.join(", "));
   } else {
@@ -9,24 +9,17 @@ const notifyError = (message: string | string[]) => {
   return;
 };
 
-const notifySuccess = (message: string) => {
+export const notifySuccess = (message: string) => {
   toast.success(message);
   return;
 };
 
-const notifyWarning = (message: string) => {
+export const notifyWarning = (message: string) => {
   toast.warning(message);
   return;
 };
 
-const notifyInfo = (message: string) => {
+export const notifyInfo = (message: string) => {
   toast.info(message);
   return;
-};
-
-export default {
-  notifyError,
-  notifySuccess,
-  notifyWarning,
-  notifyInfo,
 };

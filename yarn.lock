@@ -1099,7 +1099,7 @@ __metadata:
 
 "@parknexus/api@https://vclong2003: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@github.com/Park-Nexus/api.git#master":
   version: 0.1.0
-  resolution: "@parknexus/api@https://vclong2003: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@github.com/Park-Nexus/api.git#commit=7d72a0c36e85fe613c1bc100088949f0b5100c87"
+  resolution: "@parknexus/api@https://vclong2003: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@github.com/Park-Nexus/api.git#commit=2d61e74f07db0c923fd0b340d6d722eb867bc820"
   dependencies:
     "@google-cloud/storage": ^7.14.0
     "@onesignal/node-onesignal": ^5.0.0-alpha-01
@@ -1120,7 +1120,7 @@ __metadata:
     uuid: ^11.0.2
     yarn: ^1.22.22
     zod: ^3.23.8
-  checksum: 4145d47b3a19675a128fdf8e1ed2846607f43765024c3ef11abe8aafa86a44711a04f9340700b643d7b45013fdf5e82643da6b1ec074a7c3e6e37d04cc1a773f
+  checksum: 2769068cd5afa163caf45bb61e679bfb403306f9799366df38063b689370ea6d93c471b3e7bb4c83de2e5a6cdc32e62f843d37d7745aed9daa536a01a8f29ce6
   languageName: node
   linkType: hard
 

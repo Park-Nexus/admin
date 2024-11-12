@@ -24,6 +24,7 @@
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./src/assets/*"],
+      "@auth/*": ["./src/auth/*"],
       "@components/*": ["./src/components/*"],
       "@configs/*": ["./src/configs/*"],
       "@enums/*": ["./src/enums/*"],

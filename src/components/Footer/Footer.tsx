@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <S.Footer>
       <S.CopyrightNotice>
-        Copyright © 2022. All Rights Reserved
+        Copyright © 2024 ParkNexus Inc. All Rights Reserved
       </S.CopyrightNotice>
     </S.Footer>
   );
