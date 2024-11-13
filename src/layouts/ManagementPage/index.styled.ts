@@ -10,7 +10,10 @@ export const ManagementPage = styled.div`
 export const ContentContainer = styled.div`
   flex: 1;
   min-height: 100vh;
-  padding: var(--s-6) var(--s-8);
+  padding-top: var(--s-6);
+  padding-left: var(--s-8);
+  padding-right: var(--s-8);
+  padding-bottom: var(--s-1);
   display: flex;
   flex-direction: column;
 `;

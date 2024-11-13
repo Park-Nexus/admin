@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 40%;
+  flex: 1;
 `;
 export const PageTitle = styled(Typo)`
   margin-bottom: var(--s-2);
@@ -37,13 +38,20 @@ export const InfoRow = styled.div`
 export const Label = styled.span`
   font-weight: bold;
   margin-right: var(--s-2);
-  width: 90px;
+  width: 160px;
 `;
 
 export const Value = styled.span`
   font-size: 16px;
+  width: 100%;
 `;
-
+export const ValueUrl = styled.span`
+  font-size: 16px;
+  width: 100%;
+  color: var(--c-blue);
+  cursor: pointer;
+  text-decoration: underline;
+`;
 export const PricingTable = styled.table`
   border-collapse: collapse;
   width: 100%;

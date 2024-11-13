@@ -20,9 +20,9 @@ export default function UserActions() {
       <S.LogoutBtn size="large" onClick={logout}>
         Sign Out
       </S.LogoutBtn>
-      <S.ResetPasswordBtn to="/settings/change-password">
+      {/* <S.ResetPasswordBtn to="/settings/change-password">
         Reset Password
-      </S.ResetPasswordBtn>
+      </S.ResetPasswordBtn> */}
     </S.UserActionsMenu>
   );
 

@@ -11,6 +11,8 @@ export function ParkingLots() {
           display: "flex",
           flexDirection: "row",
           gap: "var(--s-4)",
+          flex: 1,
+          marginBottom: "var(--s-4)",
         }}>
         <List />
         <Detail />

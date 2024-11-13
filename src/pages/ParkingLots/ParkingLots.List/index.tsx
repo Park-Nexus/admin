@@ -68,10 +68,14 @@ export function List() {
       },
       {
         width: 100,
-        title: "Is Approved",
+        title: "Approval",
         dataIndex: "isApproved",
         render: (isApproved) =>
-          isApproved ? <Tag color="cyan">Yes</Tag> : <Tag color="red">No</Tag>,
+          isApproved ? (
+            <Tag color="cyan">Approved</Tag>
+          ) : (
+            <Tag color="red">Not Approved</Tag>
+          ),
       },
       {
         width: 100,

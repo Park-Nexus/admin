@@ -1,12 +1,30 @@
-import { Spin, Tag } from "antd";
+import { Modal, Spin } from "antd";
 import { useParkingLotsContext } from "../index.context";
 import { useParkingLotDetail } from "./index.data";
 import * as S from "./index.styled";
 import Button from "@components/Button";
+import { useSubmit } from "./index.submit";
 
 export function Detail() {
   const { selectedLotId } = useParkingLotsContext();
   const { lot, isFetching } = useParkingLotDetail();
+  const { submitApprovalStatus, isPending } = useSubmit();
+
+  const onSubmitApprovalStatus = () => {
+    if (!lot) return;
+    Modal.confirm({
+      title: "Updating approval status confirmation",
+      content: `Are you sure you want to ${
+        lot.isApproved ? "withdraw" : "approve"
+      } this parking lot?`,
+      onOk: () => {
+        submitApprovalStatus({
+          lotId: lot.id,
+          isApproved: lot.isApproved ? false : true,
+        });
+      },
+    });
+  };
 
   if (!selectedLotId) return null;
   return (
@@ -15,9 +33,11 @@ export function Detail() {
       <S.ContentWrapper>
         <S.Header>
           <S.HeaderTag color={lot?.isApproved ? "cyan" : "red"}>
-            {lot?.isApproved ? "Approved" : "Pending Approval"}
+            {lot?.isApproved ? "Approved" : "Not Approved"}
           </S.HeaderTag>
           <Button
+            onClick={onSubmitApprovalStatus}
+            disabled={isPending || isFetching}
             style={{
               backgroundColor: lot?.isApproved
                 ? "var(--c-red)"
@@ -30,6 +50,18 @@ export function Detail() {
         {lot && (
           <>
             <S.SectionTitle variant="h6">Lot Information</S.SectionTitle>
+            <S.InfoRow>
+              <S.Label>Location:</S.Label>
+              <S.ValueUrl
+                title={`${lot.latitude}, ${lot.longitude}`}
+                onClick={() =>
+                  window.open(
+                    `https://www.google.com/maps/search/?api=1&query=${lot.latitude},${lot.longitude}`
+                  )
+                }>
+                Open in Google Maps
+              </S.ValueUrl>
+            </S.InfoRow>
             <S.InfoRow>
               <S.Label>Name:</S.Label>
               <S.Value>{lot.name}</S.Value>
@@ -52,30 +84,40 @@ export function Detail() {
             </S.InfoRow>
             <div style={{ height: 8 }} />
 
-            <S.SectionTitle variant="h6">Pricing</S.SectionTitle>
-            <S.PricingTable>
-              <S.PricingTableRow>
-                <S.PricingTableHeader>Vehicle Type</S.PricingTableHeader>
-                <S.PricingTableHeader>Price</S.PricingTableHeader>
-              </S.PricingTableRow>
-              {lot.parkingLotPrices.map((price) => (
-                <S.PricingTableRow key={price.vehicleType}>
-                  <S.PricingTableCell>{price.vehicleType}</S.PricingTableCell>
-                  <S.PricingTableCell>${price.price}</S.PricingTableCell>
-                </S.PricingTableRow>
-              ))}
-            </S.PricingTable>
-            <div style={{ height: 16 }} />
+            {lot.parkingLotPrices.length > 0 && (
+              <>
+                <S.SectionTitle variant="h6">Pricing</S.SectionTitle>
+                <S.PricingTable>
+                  <S.PricingTableRow>
+                    <S.PricingTableHeader>Vehicle Type</S.PricingTableHeader>
+                    <S.PricingTableHeader>Price/Hour</S.PricingTableHeader>
+                  </S.PricingTableRow>
+                  {lot.parkingLotPrices.map((price) => (
+                    <S.PricingTableRow key={price.vehicleType}>
+                      <S.PricingTableCell>
+                        {price.vehicleType}
+                      </S.PricingTableCell>
+                      <S.PricingTableCell>${price.price}</S.PricingTableCell>
+                    </S.PricingTableRow>
+                  ))}
+                </S.PricingTable>
+                <div style={{ height: 16 }} />
+              </>
+            )}
 
-            <S.SectionTitle variant="h6">Services</S.SectionTitle>
-            <S.ServicesList>
-              {lot.parkingLotServices.map((service) => (
-                <S.ServiceItem key={service.id}>
-                  <S.ServiceName>{service.name}: </S.ServiceName>
-                  <S.ServicePrice>${service.price}</S.ServicePrice>
-                </S.ServiceItem>
-              ))}
-            </S.ServicesList>
+            {lot.parkingLotServices.length > 0 && (
+              <>
+                <S.SectionTitle variant="h6">Services</S.SectionTitle>
+                <S.ServicesList>
+                  {lot.parkingLotServices.map((service) => (
+                    <S.ServiceItem key={service.id}>
+                      <S.ServiceName>{service.name}: </S.ServiceName>
+                      <S.ServicePrice>${service.price}</S.ServicePrice>
+                    </S.ServiceItem>
+                  ))}
+                </S.ServicesList>
+              </>
+            )}
           </>
         )}
       </S.ContentWrapper>
