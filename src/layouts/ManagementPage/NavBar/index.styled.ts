@@ -14,6 +14,7 @@ export const NavBar = styled.nav`
 export const Logo = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: var(--s-3);
 `;
 

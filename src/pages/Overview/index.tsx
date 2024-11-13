@@ -1,4 +1,4 @@
-export default function Overview() {
+export function Overview() {
   return (
     <div
       style={{

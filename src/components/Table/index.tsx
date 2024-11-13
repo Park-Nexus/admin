@@ -1,7 +1,7 @@
 import { TableProps } from "antd";
-import * as S from "./Table.styled";
+import * as S from "./index.styled";
 
-interface ITableProps extends TableProps {}
+export interface ITableProps<T> extends TableProps<T> {}
 export default function Table({ ...props }: ITableProps) {
   return <S.Table {...props} />;
 }

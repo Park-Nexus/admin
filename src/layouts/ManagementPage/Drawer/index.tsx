@@ -11,8 +11,8 @@ const DRAWER_ITEMS = [
     icon: OverviewIcon,
   },
   {
-    to: "/parking-lot-approval",
-    label: "Parking Lot Approval",
+    to: "/parking-lots",
+    label: "Parking Lots",
     icon: ParkingLotApprovalIcon,
   },
 ];

@@ -1,6 +1,7 @@
 import { IRoute } from "@interfaces/common";
-import Overview from "@pages/Overview";
-import Settings from "@pages/Settings/Settings";
+import { Overview } from "@pages/Overview";
+import { ParkingLots } from "@pages/ParkingLots";
+import { Settings } from "@pages/Settings/Settings";
 
 export const managementRoutes: IRoute[] = [
   {
@@ -8,8 +9,8 @@ export const managementRoutes: IRoute[] = [
     component: <Overview />,
   },
   {
-    path: "parking-lot-approval/*",
-    component: <></>,
+    path: "parking-lots/*",
+    component: <ParkingLots />,
   },
   {
     path: "settings/*",

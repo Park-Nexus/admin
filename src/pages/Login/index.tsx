@@ -7,7 +7,7 @@ import { Input } from "@components/formComponents";
 import { TLoginPayload, useSubmit } from "./index.submit";
 import { useAuthState } from "./index.data";
 
-export default function Login() {
+export function Login() {
   const { isAuthenticated } = useAuthState();
   const { submit, isPending } = useSubmit();
 

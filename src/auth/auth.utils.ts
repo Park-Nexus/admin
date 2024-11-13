@@ -14,3 +14,9 @@ export function setRefreshToken(refreshToken: string) {
 export function getRefreshToken() {
   return localStorage.getItem(REFRESH_TOKEN_KEY);
 }
+
+export function logout() {
+  localStorage.removeItem(ACCESS_TOKEN_KEY);
+  localStorage.removeItem(REFRESH_TOKEN_KEY);
+  window.location.href = "/login";
+}

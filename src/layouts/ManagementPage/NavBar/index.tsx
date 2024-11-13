@@ -7,7 +7,7 @@ export default function NavBar() {
     <S.NavBar>
       <S.Logo>
         <S.LogoImage src={Logo} alt="Logo" />
-        <S.LogoText variant="h4">Admin Portal</S.LogoText>
+        <S.LogoText variant="h5">Admin Portal</S.LogoText>
       </S.Logo>
       <S.Divider />
       <UserActions />
