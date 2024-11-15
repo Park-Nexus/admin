@@ -7,6 +7,7 @@ export const DrawerItem = styled(NavLink)`
   font-display: row;
   align-items: center;
   padding: var(--s-2) var(--s-3);
+  padding-right: var(--s-4);
   margin-bottom: var(--s-3);
   border-radius: var(--br-2);
   cursor: pointer;

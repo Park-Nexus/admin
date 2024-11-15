@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import * as S from "./index.styled";
-import LogoImage from "@assets/images/mobile-logo.png";
+import LogoImage from "@assets/images/vertical-logo.png";
 import Footer from "@components/Footer";
 
 export default function AuthPage() {
@@ -8,7 +8,6 @@ export default function AuthPage() {
     <S.AuthPage>
       <S.Logo>
         <S.LogoImage src={LogoImage} />
-        <S.LogoText variant="h3">ParkNexus Admin Portal</S.LogoText>
       </S.Logo>
       {/* Content goes here ------- */}
       <Outlet />
