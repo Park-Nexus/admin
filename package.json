@@ -15,6 +15,7 @@
     "@trpc/client": "next",
     "@trpc/react-query": "next",
     "@trpc/server": "next",
+    "@visx/visx": "^3.12.0",
     "antd": "^5.22.0",
     "axios": "^1.7.7",
     "constate": "^3.3.2",
