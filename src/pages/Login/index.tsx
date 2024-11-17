@@ -6,12 +6,14 @@ import { Input } from "@components/formComponents";
 
 import { TLoginPayload, useSubmit } from "./index.submit";
 import { useAuthState } from "./index.data";
+import { clearAuthTokens } from "@auth/auth.utils";
 
 export function Login() {
   const { isAuthenticated } = useAuthState();
   const { submit, isPending } = useSubmit();
 
   const onSubmit = (values: TLoginPayload) => {
+    clearAuthTokens();
     submit({ ...values, isAdmin: true });
   };
 
