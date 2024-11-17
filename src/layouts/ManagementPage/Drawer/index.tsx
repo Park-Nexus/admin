@@ -3,6 +3,7 @@ import DrawerItem from "./Drawer.Item";
 
 import ParkingLotApprovalIcon from "@assets/icons/parking-lot-approval.png";
 import OverviewIcon from "@assets/icons/overview.png";
+import PayrollIcon from "@assets/icons/payroll.png";
 
 const DRAWER_ITEMS = [
   {
@@ -14,6 +15,11 @@ const DRAWER_ITEMS = [
     to: "/parking-lots",
     label: "Parking Lots",
     icon: ParkingLotApprovalIcon,
+  },
+  {
+    to: "/payout",
+    label: "Payout",
+    icon: PayrollIcon,
   },
 ];
 
