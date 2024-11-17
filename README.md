@@ -1,6 +1,8 @@
 ## Debug or Build
 
 1. Development run `yarn dev`.
+2. Build docker run `docker build --platform linux/amd64 -t asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin .`
+3. Push docker run `docker --platform linux/amd64 push asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin`
 
 ## Configuration for development
 

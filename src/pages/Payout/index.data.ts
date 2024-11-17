@@ -1,4 +1,5 @@
 import { trpc } from "@trpc/trpc";
+import { TrpcOutput } from "@trpc/trpc.types";
 
 export function usePayouts() {
   const response = trpc.payment.payout.get.many.useQuery({});
@@ -7,3 +8,4 @@ export function usePayouts() {
 
   return Object.assign({ payouts }, response);
 }
+export type TItem = TrpcOutput["payment"]["payout"]["get"]["many"][number];
