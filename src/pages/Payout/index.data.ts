@@ -19,6 +19,6 @@ export function usePayoutDetail(id?: number) {
 
 export function usePlatformBalance() {
   const response = trpc.payment.payout.platformBalance.get.useQuery();
-  const balance = response.data;
+  const balance = response.data?.balance;
   return Object.assign({ balance }, response);
 }

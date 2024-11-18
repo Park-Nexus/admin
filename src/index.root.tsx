@@ -1,5 +1,6 @@
 import "@assets/css/global.css"; // Importing global css
 import "@assets/css/fonts.css"; // Importing custom fonts
+import "highcharts/css/highcharts.css";
 
 import AppRoutes from "@routes/routes.app";
 import { TrpcProvider } from "./trpc";

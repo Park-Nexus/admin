@@ -11,17 +11,14 @@ import { useCreatePayouts } from "./index.create";
 import { Modal, Tag } from "antd";
 import styled from "styled-components";
 import { useState } from "react";
+import Typo from "@components/Typo/Typo";
 
 export function Payout() {
-  const { payouts, refetch } = usePayouts();
+  const { payouts } = usePayouts();
   const [selectedPayoutId, setSelectedPayoutId] = useState<number>();
   const { createPayout, isPending } = useCreatePayouts();
   const { payout } = usePayoutDetail(selectedPayoutId);
   const { balance } = usePlatformBalance();
-
-  console.log(payouts);
-  console.log(payout);
-  console.log(balance);
 
   const tableProps: ITableProps<TItem> = {
     dataSource: payouts,
@@ -82,44 +79,62 @@ export function Payout() {
   return (
     <S.Wrapper>
       <S.Header>
-        <h2>Payouts</h2>
+        <Typo variant="h4">Payouts</Typo>
         <Button onClick={onCreatePayout} disabled={isPending}>
           Generate Payouts
         </Button>
       </S.Header>
 
+      <S.BalanceContainer>
+        <S.BalanceCard>
+          <Typo variant="body2">Available Balance</Typo>
+          <Typo variant="h5">
+            ${balance?.available?.[0]?.amount || 0 / 100}
+          </Typo>
+        </S.BalanceCard>
+        <S.BalanceCard>
+          <Typo variant="body2">Pending Balance</Typo>
+          <Typo variant="h5">${balance?.pending?.[0]?.amount || 0 / 100}</Typo>
+        </S.BalanceCard>
+        <S.BalanceCard>
+          <Typo variant="body2">Connect Reserved</Typo>
+          <Typo variant="h5">
+            ${balance?.connect_reserved?.[0]?.amount || 0 / 100}
+          </Typo>
+        </S.BalanceCard>
+      </S.BalanceContainer>
+
       <S.Panel>
-        {/* Payout List */}
         <S.PayoutListWrapper>
-          <h3>Payout History</h3>
+          <Typo variant="h5">Payout History</Typo>
+          <div style={{ height: "16px" }} />
           <Table {...tableProps} />
         </S.PayoutListWrapper>
-
-        {/* Payout Detail */}
         <S.PayoutDetailWrapper>
-          <h3>Payout Detail</h3>
+          <Typo variant="h5">Payout Detail</Typo>
+          <div style={{ height: "16px" }} />
           {payout ? (
             <S.DetailCard>
-              <p>
+              <Typo variant="body2">
                 <strong>Parking Lot:</strong> {payout.parkingLot.name}
-              </p>
-              <p>
+              </Typo>
+              <Typo variant="body2">
                 <strong>Owner Email:</strong>{" "}
                 {payout.parkingLot.owner.account.email}
-              </p>
-              <p>
+              </Typo>
+              <Typo variant="body2">
                 <strong>Total Net:</strong> ${payout.totalNetInUsd.toFixed(2)}
-              </p>
-              <p>
+              </Typo>
+              <Typo variant="body2">
                 <strong>Fee:</strong> ${payout.totalFeeInUsd.toFixed(2)}
-              </p>
-              <p>
+              </Typo>
+              <Typo variant="body2">
                 <strong>Status:</strong> {payout.status}
-              </p>
-              <p>
+              </Typo>
+              <Typo variant="body2">
                 <strong>Created At:</strong>{" "}
                 {new Date(payout.createdAt).toLocaleString()}
-              </p>
+              </Typo>
             </S.DetailCard>
           ) : (
             <p>Select a payout to see details</p>
@@ -141,10 +156,26 @@ namespace S {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 16px;
+  `;
 
-    h2 {
-      margin: 0;
+  export const BalanceContainer = styled.div`
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  `;
+
+  export const BalanceCard = styled.div`
+    background-color: #ffffff; /* Changed to white */
+    border-radius: 8px;
+    padding: 16px;
+    flex: 1;
+    text-align: center;
+
+    h5 {
+      margin: 8px 0 0;
     }
   `;
 
@@ -155,31 +186,24 @@ namespace S {
 
   export const PayoutListWrapper = styled.div`
     flex: 2;
+    padding: 16px;
+    background-color: #ffffff;
+    border-radius: 8px;
   `;
 
   export const PayoutDetailWrapper = styled.div`
     flex: 1;
     background-color: #f9f9f9;
-    padding: 16px;
-    border-radius: 8px;
 
-    h3 {
-      margin-bottom: 16px;
-    }
+    border-radius: 8px;
   `;
 
   export const DetailCard = styled.div`
     background-color: #fff;
-    border: 1px solid #e0e0e0;
     padding: 16px;
     border-radius: 8px;
-
     p {
-      margin: 8px 0;
-    }
-
-    strong {
-      font-weight: 600;
+      margin-bottom: 8px;
     }
   `;
 }
