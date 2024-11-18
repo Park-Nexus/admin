@@ -234,6 +234,8 @@ export function Overview() {
         gap: "16px",
         marginBottom: "24px",
       }}>
+      <h2 style={{ width: "100%" }}>Overview</h2>
+
       {/* Daily Revenue */}
       <HighchartsReact highcharts={Highcharts} options={dailyRevenueOptions} />
       <HighchartsReact

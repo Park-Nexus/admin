@@ -3,6 +3,7 @@ import DrawerItem from "./Drawer.Item";
 
 import ParkingLotApprovalIcon from "@assets/icons/parking-lot-approval.png";
 import OverviewIcon from "@assets/icons/overview.png";
+import SystemMetricsIcon from "@assets/icons/system-metrics.png";
 import PayrollIcon from "@assets/icons/payroll.png";
 
 const DRAWER_ITEMS = [
@@ -10,6 +11,11 @@ const DRAWER_ITEMS = [
     to: "/",
     label: "Overview",
     icon: OverviewIcon,
+  },
+  {
+    to: "/system-metrics",
+    label: "System Metrics",
+    icon: SystemMetricsIcon,
   },
   {
     to: "/parking-lots",

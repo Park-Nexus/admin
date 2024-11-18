@@ -5,6 +5,7 @@ export const ManagementPage = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  min-width: 1550px;
 `;
 
 export const ContentContainer = styled.div`
