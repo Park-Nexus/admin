@@ -210,7 +210,7 @@ export function SystemMetrics() {
         gap: "16px",
         marginBottom: "24px",
       }}>
-      <h2 style={{ width: "100%" }}>Last 24 Hours System Metrics</h2>
+      <h2 style={{ width: "100%" }}>Last 12 Hours System Metrics</h2>
 
       {/* Cloud Run CPU Utilization */}
       <HighchartsReact highcharts={Highcharts} options={cloudRunCpuOptions} />
