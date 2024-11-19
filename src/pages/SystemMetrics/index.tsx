@@ -1,6 +1,4 @@
-import HighchartsReact, {
-  HighchartsReactProps,
-} from "highcharts-react-official";
+import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 import {
   useCloudRunApiCpuUtilizations,
@@ -26,6 +24,13 @@ export function SystemMetrics() {
       height: 420, // Set chart height
       style: {
         borderRadius: "var(--br-2)",
+      },
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false,
+        },
       },
     },
     title: { text: "API CPU Utilization" },
@@ -54,6 +59,13 @@ export function SystemMetrics() {
       height: 420, // Set chart height
       style: {
         borderRadius: "var(--br-2)",
+      },
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false,
+        },
       },
     },
     title: { text: "API Memory Utilization" },
@@ -86,6 +98,13 @@ export function SystemMetrics() {
         borderRadius: "var(--br-2)",
       },
     },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false,
+        },
+      },
+    },
     title: { text: "Database CPU Utilization" },
     xAxis: {
       categories: cloudSqlCpuUtilizations?.data.map((item) =>
@@ -112,6 +131,13 @@ export function SystemMetrics() {
       height: 450, // Set chart height
       style: {
         borderRadius: "var(--br-2)",
+      },
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false,
+        },
       },
     },
     title: { text: "Database I/O" },
@@ -144,6 +170,13 @@ export function SystemMetrics() {
       height: 450, // Set chart height
       style: {
         borderRadius: "var(--br-2)",
+      },
+    },
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false,
+        },
       },
     },
     title: { text: "Database Storage Usage" },
