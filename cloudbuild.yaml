@@ -1,8 +1,16 @@
 steps:
-  - name: gcr.io/cloud-builders/git
-    args: ["config", "--global", "user.name", "vclong2003"]
-  - name: gcr.io/cloud-builders/git
-    args: ["config", "--global", "user.email", "vclong2003@gmail.com"]
+  - name: "gcr.io/cloud-builders/git"
+    secretEnv: ["SSH_KEY"]
+    entrypoint: "bash"
+    args:
+      - -c
+      - |
+        echo "$$SSH_KEY" >> /root/.ssh/id_rsa
+        chmod 400 /root/.ssh/id_rsa
+        cp known_hosts.github /root/.ssh/known_hosts
+    volumes:
+      - name: "ssh"
+        path: /root/.ssh
   - name: node
     entrypoint: npm
     args: ["run", "create-env"]
@@ -40,3 +48,7 @@ substitutions:
   _API_URL: ""
 images:
   - asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin
+availableSecrets:
+  secretManager:
+    - versionName: projects/1030597876955/secrets/github/versions/1
+      env: "SSH_KEY"
