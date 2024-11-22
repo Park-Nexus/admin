@@ -1,4 +1,8 @@
 steps:
+  - name: gcr.io/cloud-builders/git
+    args: ["config", "--global", "user.name", "gcloud"]
+  - name: gcr.io/cloud-builders/git
+    args: ["config", "--global", "user.email", "gcloud@park-nexus.corp"]
   - name: node
     entrypoint: npm
     args: ["run", "create-env"]
