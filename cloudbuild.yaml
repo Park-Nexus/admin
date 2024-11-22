@@ -1,4 +1,8 @@
 steps:
+  - name: gcr.io/cloud-builders/git
+    args: ["config", "--global", "user.name", "vclong2003"]
+  - name: gcr.io/cloud-builders/git
+    args: ["config", "--global", "user.email", "vclong2003@gmail.com"]
   - name: node
     entrypoint: npm
     args: ["run", "create-env"]
