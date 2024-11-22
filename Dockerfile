@@ -13,7 +13,7 @@ COPY tsconfig.json ./tsconfig.json
 COPY tsconfig.app.json ./tsconfig.app.json
 COPY tsconfig.node.json ./tsconfig.node.json
 COPY vite.config.ts ./vite.config.ts
-COPY yarn.lock ./yarn.lock
+# COPY yarn.lock ./yarn.lock
 
 RUN npm install -g serve
 RUN yarn install
