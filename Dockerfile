@@ -15,7 +15,6 @@ COPY tsconfig.node.json ./tsconfig.node.json
 COPY vite.config.ts ./vite.config.ts
 COPY yarn.lock ./yarn.lock
 
-
 RUN npm install -g serve
 RUN yarn install && yarn build
 
