@@ -24,6 +24,9 @@ steps:
         "asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin",
         ".",
       ]
+    volumes:
+      - name: "ssh"
+        path: /root/.ssh
   - name: "gcr.io/cloud-builders/docker"
     args:
       [
