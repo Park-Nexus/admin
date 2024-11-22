@@ -1,0 +1,38 @@
+steps:
+  - name: node
+    entrypoint: npm
+    args: ["run", "create-env"]
+    env:
+      - "VITE_API_URL=${_API_URL}"
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin",
+        ".",
+      ]
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "push",
+        "asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin",
+      ]
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      [
+        "run",
+        "deploy",
+        "admin",
+        "--image",
+        "asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin",
+        "--region",
+        "asia-east1",
+      ]
+options:
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _API_URL: ""
+images:
+  - asia-east2-docker.pkg.dev/parknexus-440604/park-nexus-images/admin
