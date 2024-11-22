@@ -16,7 +16,8 @@ COPY vite.config.ts ./vite.config.ts
 COPY yarn.lock ./yarn.lock
 
 RUN npm install -g serve
-RUN yarn install && yarn build
+RUN yarn install
+RUN yarn build
 
 EXPOSE 4200
 CMD ["serve", "-s", "-l", "4200", "./dist"]
