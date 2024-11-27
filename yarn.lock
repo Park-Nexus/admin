@@ -1137,9 +1137,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@parknexus/api@https://oauth2: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@github.com/Park-Nexus/api.git#master":
+"@parknexus/api@https://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@github.com/Park-Nexus/api.git#master":
   version: 0.1.0
-  resolution: "@parknexus/api@https://oauth2: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@github.com/Park-Nexus/api.git#commit=ca5ca94c9a3570ff0ce1a0f1e99e35b79900b776"
+  resolution: "@parknexus/api@https://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@github.com/Park-Nexus/api.git#commit=1e8a673698bb46ceb54743af4d0e0e9c4b23437b"
   dependencies:
     "@google-cloud/monitoring": ^4.1.0
     "@google-cloud/storage": ^7.14.0
@@ -1164,7 +1164,7 @@ __metadata:
     uuid: ^11.0.2
     yarn: ^1.22.22
     zod: ^3.23.8
-  checksum: 31824586d2332280ae003c8bf84fdeb2d55a1a259d37533d920e84ce18657fc7845f130e927968ac56cba0aa7d7ec2fe743746211b2733a399656d43d68f720a
+  checksum: 7634fe16132beb7dc6ca6de23d589d983a39adff3f522963da9555322f19fb57e68832319773baabc2eb3f0f600742d3dd505f10cf4f107476cd03e9d0d4a5bb
   languageName: node
   linkType: hard
 
@@ -1989,7 +1989,7 @@ __metadata:
   resolution: "admin@workspace:."
   dependencies:
     "@eslint/js": ^9.11.1
-    "@parknexus/api": "https://oauth2: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@github.com/Park-Nexus/api.git#master"
+    "@parknexus/api": "https://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@github.com/Park-Nexus/api.git#master"
     "@tanstack/react-query": latest
     "@trpc/client": next
     "@trpc/react-query": next
