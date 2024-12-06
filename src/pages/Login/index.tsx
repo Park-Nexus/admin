@@ -14,7 +14,7 @@ export function Login() {
 
   const onSubmit = (values: TLoginPayload) => {
     clearAuthTokens();
-    submit({ ...values, isAdmin: true });
+    submit({ ...values });
   };
 
   return (

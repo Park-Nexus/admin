@@ -4,9 +4,9 @@ import { TrpcInput } from "@trpc/trpc.types";
 import { notifyError } from "@utils/notification";
 import { parseTrpcErrorMessage } from "@utils/trpcHelpers";
 
-export type TLoginPayload = TrpcInput["auth"]["login"];
+export type TLoginPayload = TrpcInput["auth"]["login"]["admin"];
 export function useSubmit() {
-  const mutation = trpc.auth.login.useMutation();
+  const mutation = trpc.auth.login.admin.useMutation();
 
   const ctx = trpc.useUtils();
   const submit = (payload: TLoginPayload) => {

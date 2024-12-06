@@ -5,6 +5,8 @@ import { httpBatchLink } from "@trpc/react-query";
 import { authLinkInterceptor, headers } from "./trpc.auth";
 import { apiUrl } from "../configs/configs.api";
 
+console.log("apiUrl", apiUrl);
+
 type TrpcProviderProps = {
   children: React.ReactNode;
 };
